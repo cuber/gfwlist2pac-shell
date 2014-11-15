@@ -27,6 +27,30 @@ OPENSSL=/usr/bin/openssl
 # socks5 proxy ssh -D, shadowsocks or others
 PROXY="127.0.0.1:7070"
 ```
+### custom
+  You can add some domains to `custom.txt`, it will be added into the pac file automatically.
+  One domain per-line.
+```
+github.com
+dropbox.com
+linode.com
+stackoverflow.com
+linost.com
+eigenlogik.com
+iceimg.com
+jetbrains.com
+instagram.com
+linkedin.com
+agilebits.com
+godaddy.com
+startssl.com
+btdigg.org
+digitalattackmap.com
+igvita.com
+apache.org
+jquery.com
+speedtest.net
+```
 
 ### Usage
   after all dependency ready
@@ -36,7 +60,7 @@ PROXY="127.0.0.1:7070"
   Eg. `./gfw.sh release/proxy.pac`
 
   The proxy.pac will be generated to `release/proxy.pac`
-  
+
 ### Performance
 
 An example of generated PAC file is [here] [1].
