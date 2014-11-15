@@ -10,15 +10,19 @@ This version is just an implementation of pure shell
 Generate O(1) PAC file from gfwlist.
 
 ### Dependency
-  The cli version of curl, openssl which was integrated into most popular linux version.
+  The cli version of `curl`, `openssl` which was integrated into most popular linux version.
+
   You can specify the tools customly.
+
 ```bash
 # curl & openssl cli command path
 CURL=/usr/bin/curl
 OPENSSL=/usr/bin/openssl
 ```
   A socks5 proxy is needed to download the gfwlist. 
+
   You can make one via shadowsocks or ssh -D, the `PROXY` will be used to generate the pac file as well, so it should be an commonly used local address.
+
 ```bash
 # socks5 proxy ssh -D, shadowsocks or others
 PROXY="127.0.0.1:7070"
@@ -26,9 +30,13 @@ PROXY="127.0.0.1:7070"
 
 ### Usage
   after all dependency ready
+
   Usage. `./gfw.sh [filename.pac]`
+
   Eg. `./gfw.sh release/proxy.pac`
+
   The proxy.pac will be generated to `release/proxy.pac`
+  
 ### Performance
 
 An example of generated PAC file is [here] [1].
