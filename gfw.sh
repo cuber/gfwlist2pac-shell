@@ -16,7 +16,7 @@ CURL=/usr/bin/curl
 OPENSSL=/usr/bin/openssl
 
 # get current dirname
-DIR=$(cd $(pwd); pwd);
+DIR=$(cd $(dirname $0); pwd))
 
 # load util functions
 source $DIR/util.sh

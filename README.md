@@ -27,7 +27,7 @@ OPENSSL=/usr/bin/openssl
 # socks5 proxy ssh -D, shadowsocks or others
 PROXY="127.0.0.1:7070"
 ```
-### custom
+### Custom
   You can add some domains to `custom.txt`, it will be added into the pac file automatically.
   One domain per-line.
 ```
