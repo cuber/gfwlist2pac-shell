@@ -5,14 +5,16 @@
 # modified by @cube via native zsh
 # https://github.com/cuber/gfwlist2pac
 
-# gfwlist url
-URL="https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt"
+# url
+XLDURL="https://publicsuffix.org/list/effective_tld_names.dat"
+GFWURL="https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt"
 
 # socks5 proxy ssh -D, shadowsocks or others
 PROXY="127.0.0.1:7070"
 
 # curl & openssl cli command path
 CURL=/usr/bin/curl
+CURLOPT=(-s -x socks5://$PROXY)
 OPENSSL=/usr/bin/openssl
 
 # get current dirname
@@ -22,7 +24,7 @@ DIR=$(cd $(dirname $0); pwd)
 source $DIR/util.sh
 typeset -A XLD
 typeset -A UNIQ
-for i in $(grep -v -e '^\s*$' -e '^/' $DIR/xld.txt); do XLD[$i]=1; done
+for i in $($CURL $CURLOPT $XLDURL | grep -v -e '^\s*$' -e '^/'); do XLD[$i]=1; done
 
 # output pac file
 PAC=$1
@@ -50,7 +52,7 @@ cat $DIR/custom.txt \
   | sed -e s'/^\s*//'g -e s'/\s*$//'g \
   | valid
 
-$CURL -s $URL -x "socks5://$PROXY" \
+$CURL $CURLOPT $GFWURL \
   | $OPENSSL base64 -d \
   | urldecode \
   | grep -v \
