@@ -11,6 +11,15 @@ Generate O(1) PAC file from gfwlist.
 
 ### Dependency
   
+  A socks5 proxy is needed to download the gfwlist. 
+
+  You can make one via `shadowsocks` or `ssh -D`, the `PROXY` will be used to generate the pac file as well, so it should be an commonly used local address.
+
+```zsh
+# socks5 proxy ssh -D, shadowsocks or others
+PROXY="127.0.0.1:7070"
+```
+
   Beacuse of the limitation of shell, i migration to `zsh`, you can easily install with `apt-get`, `yum`, `pacman` in any kind of linux platform.
 
   The cli version of `curl`, `openssl` which was integrated into most popular linux version.
@@ -24,14 +33,6 @@ CURLOPT=(-s -x socks5://$PROXY)
 OPENSSL=/usr/bin/openssl
 ```
   
-  A socks5 proxy is needed to download the gfwlist. 
-
-  You can make one via `shadowsocks` or `ssh -D`, the `PROXY` will be used to generate the pac file as well, so it should be an commonly used local address.
-
-```zsh
-# socks5 proxy ssh -D, shadowsocks or others
-PROXY="127.0.0.1:7070"
-```
 ### Custom
   You can add some domains to `custom.txt`, it will be added into the pac file automatically.
   One domain per-line.
