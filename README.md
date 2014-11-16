@@ -1,7 +1,7 @@
 gfwlist2pac-shell
 =================
 
-Translate the gfwlist in base64 to efficient pac file
+Translate the gfwlist in base64 to efficient pac file with X-level domain validation
 
 This project is mainly created by [@clowwindy](https://github.com/clowwindy/gfwlist2pac) via python
 
@@ -10,20 +10,23 @@ This version is just an implementation of pure shell
 Generate O(1) PAC file from gfwlist.
 
 ### Dependency
+  
+  Beacuse of the limitation of shell, i migration to `zsh`, you can easily install with `apt-get`, `yum`, `pacman` in any kind of linux platform.
+
   The cli version of `curl`, `openssl` which was integrated into most popular linux version.
 
   You can specify the tools customly.
 
-```bash
+```zsh
 # curl & openssl cli command path
 CURL=/usr/bin/curl
 OPENSSL=/usr/bin/openssl
 ```
   A socks5 proxy is needed to download the gfwlist. 
 
-  You can make one via shadowsocks or ssh -D, the `PROXY` will be used to generate the pac file as well, so it should be an commonly used local address.
+  You can make one via `shadowsocks` or `ssh -D`, the `PROXY` will be used to generate the pac file as well, so it should be an commonly used local address.
 
-```bash
+```zsh
 # socks5 proxy ssh -D, shadowsocks or others
 PROXY="127.0.0.1:7070"
 ```

@@ -1,6 +1,6 @@
 github.com
-dropbox.com
 linode.com
+github.com
 stackoverflow.com
 linost.com
 eigenlogik.com
@@ -17,3 +17,4 @@ igvita.com
 apache.org
 jquery.com
 speedtest.net
+wikimedia.org
