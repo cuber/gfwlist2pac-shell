@@ -20,8 +20,10 @@ Generate O(1) PAC file from gfwlist.
 ```zsh
 # curl & openssl cli command path
 CURL=/usr/bin/curl
+CURLOPT=(-s -x socks5://$PROXY)
 OPENSSL=/usr/bin/openssl
 ```
+  
   A socks5 proxy is needed to download the gfwlist. 
 
   You can make one via `shadowsocks` or `ssh -D`, the `PROXY` will be used to generate the pac file as well, so it should be an commonly used local address.
