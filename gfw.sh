@@ -82,7 +82,8 @@ cat >> $PAC <<EOF
 } // end of domains
 
 // proxy failover
-var proxy = 'SOCKS5 $PROXY; SOCKS $PROXY; DIRECT;'
+var proxy  = 'SOCKS5 $PROXY; SOCKS $PROXY; DIRECT;'
+var direct = 'DIRECT;'
 
 // function of proxy router
 function FindProxyForURL(url, host) {
