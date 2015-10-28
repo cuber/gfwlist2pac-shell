@@ -7,10 +7,10 @@
 
 # url
 XLDURL="https://publicsuffix.org/list/effective_tld_names.dat"
-GFWURL="https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt"
+GFWURL="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"
 
 # socks5 proxy ssh -D, shadowsocks or others
-PROXY="127.0.0.1:7070"
+PROXY="127.0.0.1:1080"
 
 # curl & openssl cli command path
 CURL=/usr/bin/curl
